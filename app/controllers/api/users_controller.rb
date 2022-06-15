@@ -39,13 +39,6 @@ module Api
     end
 
     def show
-      # user = User.find_by(id: params[:id])
-
-      # response = {
-      #   user: user,
-      # }
-
-      # render json: response.to_json
       scores = Score.where(user_id: params[:id]).includes(:user).order(played_at: :desc, id: :desc)
       serialized_scores = scores.map(&:serialize)
 
