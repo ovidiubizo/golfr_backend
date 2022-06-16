@@ -28,7 +28,7 @@ describe Api::ScoresController, type: :request do
     end
 
     it 'should return only 25 posts' do
-      (0..27).each do
+      25.times do
         create(:score, user: @user1, total_score: 101, played_at: '2021-07-15')
       end
 
