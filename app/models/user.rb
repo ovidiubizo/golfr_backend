@@ -1,3 +1,4 @@
+# class User
 class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::JTIMatcher
 
@@ -11,5 +12,4 @@ class User < ApplicationRecord
       name: name,
     }
   end
-
 end
